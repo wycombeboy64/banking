@@ -8,7 +8,6 @@ import java.util.List;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.hdivsamples.bean.Account;
 import org.hdivsamples.bean.CashAccount;
@@ -67,7 +66,7 @@ public class TransferController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String transfer(@Valid @ModelAttribute final Transfer transfer, final BindingResult bindingResult, final Model model,
+	public String transfer(@ModelAttribute final Transfer transfer, final BindingResult bindingResult, final Model model,
 			final Principal principal, @CookieValue(value = "accountType", defaultValue = AccountType.PERSONAL) final String accountType,
 			final HttpSession session, final HttpServletResponse response) throws IOException {
 

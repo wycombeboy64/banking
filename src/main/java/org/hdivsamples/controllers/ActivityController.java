@@ -3,8 +3,6 @@ package org.hdivsamples.controllers;
 import java.security.Principal;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.hdivsamples.bean.Account;
 import org.hdivsamples.bean.CashAccount;
 import org.hdivsamples.bean.Transaction;
@@ -96,7 +94,7 @@ public class ActivityController {
 	}
 
 	@RequestMapping(value = { "", "/activity", "/detail" }, method = RequestMethod.POST)
-	public String changeAccount(@Valid @ModelAttribute final CashAccount cashAccount, final BindingResult bindingResult, final Model model,
+	public String changeAccount(@ModelAttribute final CashAccount cashAccount, final BindingResult bindingResult, final Model model,
 			final Principal principal) {
 
 		String postNumber = cashAccount.getNumber();
